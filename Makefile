@@ -1,5 +1,5 @@
 
-# VAR ---------------------------------------------------------------
+# VAR ------------------------------------------------------------------------ #
 OBJS_DIR		=	.objs/
 SRCS			=	srcs/Pair.cpp srcs/PmergeMe.cpp \
 					srcs/utils/cast.cpp \
@@ -15,11 +15,12 @@ CC				=	c++
 RM				=	rm -rf
 FLAGS			=	-Wall -Wextra -Werror -std=c++98 -MMD -MP -fsanitize=address -g
 
-# RULES -------------------------------------------------------------
+# RULES ---------------------------------------------------------------------- #
 all:				$(NAME)
 
 run:				all
-					./$(NAME) `jot -r 5000 1 10000 | tr '\n' ' '`
+					./$(NAME) `shuf -i 1-1000 -n 3000 | tr '\n' ' '`
+#					./$(NAME) `jot -r 5000 1 10000 | tr '\n' ' '`
 
 $(NAME):			$(OBJS)
 					$(CC) $(FLAGS) $(OBJS) -o $(NAME)

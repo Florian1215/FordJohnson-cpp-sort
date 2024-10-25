@@ -14,10 +14,10 @@
 #include <iostream>
 #include <vector>
 
-std::string	isSort(vecInt &array) {
+std::string	isSort(const vecInt &array) {
 	for (size_t i = 0; i < array.size() - 1; ++i) {
 		if (array[i + 1] < array[i])
-			return ("not sort " + std::to_string(array[i]));
+			return ("not sort");
 	}
 	return ("sort");
 }

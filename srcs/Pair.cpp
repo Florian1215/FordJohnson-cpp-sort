@@ -12,7 +12,7 @@
 
 #include "Pair.hpp"
 
-// CONSTRUCTOR - DESTRUCTOR ----------------------------------------------------
+/*  CONSTRUCTOR - DESTRUCTOR ------------------------------------------------ */
 Pair::Pair() : _pairHigh(NULL), _pairLow(NULL), _basePair(false), _high(-1), _nPair(0) { }
 
 Pair::Pair(Pair *pair1, Pair *pair2) : _basePair(false), _nPair(pair1->getNPair() + 1) {
@@ -38,7 +38,7 @@ Pair::~Pair() {
 }
 
 
-// OPERATOR OVERLOADING --------------------------------------------------------
+/*  OPERATOR OVERLOADING ---------------------------------------------------- */
 Pair &Pair::operator=(const Pair &rhs) {
 	if (this != &rhs) {
 		this->_pairHigh = rhs._pairHigh;
@@ -66,7 +66,7 @@ std::ostream	&operator<<(std::ostream& os, const Pair *pair) {
 }
 
 
-// GETTER - SETTER -------------------------------------------------------------
+/*  GETTER - SETTER --------------------------------------------------------- */
 Pair	*Pair::getPairHigh() const { return (_pairHigh); }
 
 Pair	*Pair::getPairLow() const { return (_pairLow); }

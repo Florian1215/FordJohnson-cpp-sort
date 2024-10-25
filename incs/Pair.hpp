@@ -17,16 +17,16 @@
 
 class Pair {
 public:
-// CONSTRUCTOR - DESTRUCTOR ----------------------------------------------------
+/*  CONSTRUCTOR - DESTRUCTOR ------------------------------------------------ */
 	Pair(Pair *pair1, Pair *pair2);
 	Pair(int value);
 	Pair(const Pair &src);
 	~Pair();
 
-// OPERATOR OVERLOADING --------------------------------------------------------
+/*  OPERATOR OVERLOADING ---------------------------------------------------- */
 	Pair		&operator=(const Pair &rhs);
 
-// GETTER - SETTER -------------------------------------------------------------
+/*  GETTER - SETTER --------------------------------------------------------- */
 	Pair 		*getPairHigh() const;
 	Pair 		*getPairLow() const;
 	bool 		isBasePair() const;

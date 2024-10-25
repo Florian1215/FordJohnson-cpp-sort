@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include <stdexcept>
 
-int catoi(char *str) {
-	char	*invalidChar;
-	long	value;
+int catoi(const char *str) {
+	char		*invalidChar;
+	const long	value = std::strtol(str, &invalidChar, 10);
 
-	value = std::strtol(str, &invalidChar, 10);
 	if (*invalidChar)
 		throw std::runtime_error("Invalid char");
 	if (value < 0)
