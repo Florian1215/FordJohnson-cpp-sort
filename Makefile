@@ -19,7 +19,7 @@ FLAGS			=	-Wall -Wextra -Werror -std=c++98 -MMD -MP -fsanitize=address -g
 all:				$(NAME)
 
 run:				all
-					./$(NAME) `shuf -i 1-1000 -n 3000 | tr '\n' ' '`
+					./$(NAME) `shuf -i 1-1000 -n 9 | tr '\n' ' '`
 #					./$(NAME) `jot -r 5000 1 10000 | tr '\n' ' '`
 
 $(NAME):			$(OBJS)

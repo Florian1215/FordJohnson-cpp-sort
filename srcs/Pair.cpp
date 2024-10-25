@@ -32,10 +32,7 @@ Pair::Pair(int value) : _pairHigh(NULL), _pairLow(NULL), _basePair(true), _high(
 
 Pair::Pair(const Pair &src) { *this = src; }
 
-Pair::~Pair() {
-	delete _pairHigh;
-	delete _pairLow;
-}
+Pair::~Pair() { }
 
 
 /*  OPERATOR OVERLOADING ---------------------------------------------------- */

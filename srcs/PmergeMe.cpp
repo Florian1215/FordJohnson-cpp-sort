@@ -63,19 +63,17 @@ void	PmergeMe::_createAllPairs() {
 }
 
 void	PmergeMe::_createPairs() {
-	Pair	*pair2;
-
 	for (vecPair::iterator it = _pairArray.begin(); it != _pairArray.end(); ++it) {
 		Pair	*pair1 = *it;
+
 		_pairArray.erase(it);
 		if (it == _pairArray.end()) {
 			_overflowPair.push_back(pair1);
 			return ;
 		}
-		else {
-			pair2 = *it;
-			_pairArray.erase(it);
-		}
+		Pair	*pair2 = *it;
+
+		_pairArray.erase(it);
 		_pairArray.insert(it, new Pair(pair1, pair2));
 	}
 	_overflowPair.push_back(NULL);
@@ -98,7 +96,10 @@ void	PmergeMe::_initInsertSort() {
 
 	for (size_t i = 0; i < _pairArray.size(); ++i) {
 		_sortPairArray.push_back(_pairArray[i]->getPairHigh());
+		const Pair	*tmp_delete = _pairArray[i];
+
 		_pairArray[i] = _pairArray[i]->getPairLow();
+		delete tmp_delete;
 	}
 
 	const int	j = _sortPairArray[0]->getNPair() + 1;
