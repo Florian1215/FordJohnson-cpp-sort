@@ -15,12 +15,24 @@ CC				=	c++
 RM				=	rm -rf
 FLAGS			=	-Wall -Wextra -Werror -std=c++98 -MMD -MP -fsanitize=address -g
 
+RANGE			=	1000
+NUMBERS			=	3000
+
+UNAME			=	$(shell uname -s)
+
+ifeq ($(UNAME), Linux)
+CMD				=	`shuf -i 1-$(RANGE) -n $(NUMBERS) | tr '\n' ' '`
+endif
+
+ifeq ($(UNAME), Darwin)
+CMD				=	`jot -r $(NUMBERS) 1 $(RANGE) | tr '\n' ' '`
+endif
+
 # RULES ---------------------------------------------------------------------- #
 all:				$(NAME)
 
 run:				all
-					./$(NAME) `shuf -i 1-1000 -n 3 | tr '\n' ' '`
-#					./$(NAME) `jot -r 5000 1 10000 | tr '\n' ' '`
+					./$(NAME) $(CMD)
 
 $(NAME):			$(OBJS)
 					$(CC) $(FLAGS) $(OBJS) -o $(NAME)
