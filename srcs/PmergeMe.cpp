@@ -92,6 +92,7 @@ void	PmergeMe::_fordJohnsonSort() {
 void	PmergeMe::_initInsertSort() {
 	_sortPairArray.push_back(_pairArray[0]->getPairLow());
 	_sortPairArray.push_back(_pairArray[0]->getPairHigh());
+	delete _pairArray[0];
 	_pairArray.erase(_pairArray.begin());
 
 	for (size_t i = 0; i < _pairArray.size(); ++i) {
