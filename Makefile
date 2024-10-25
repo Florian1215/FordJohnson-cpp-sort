@@ -13,7 +13,7 @@ HEAD			=	incs/
 
 CC				=	c++
 RM				=	rm -rf
-FLAGS			=	-Wall -Wextra -Werror -std=c++98 -MMD -MP -fsanitize=address -g
+FLAGS			=	-Wall -Wextra -Werror -std=c++98 -MMD -MP
 
 RANGE			=	1000
 NUMBERS			=	3000
